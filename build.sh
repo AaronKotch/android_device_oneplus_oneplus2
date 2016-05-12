@@ -12,7 +12,11 @@ else
 fi
 repo sync -j16 --force-sync --no-tags --no-clone-bundle --no-repo-verify -f -c
 . build/envsetup.sh
-rm $OUT/*.zip
+if [ $CLEAN ]; then
+	make clean
+else
+	rm $OUT/*.zip
+fi
 brunch $DEVICE
 file = $(ls $OUT/cm-13.0-*.zip)
 if [ -f $file ]; then
