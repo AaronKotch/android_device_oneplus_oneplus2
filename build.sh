@@ -17,6 +17,9 @@ if [ $CLEAN ]; then
 else
 	rm $OUT/*.zip
 fi
+# Fix for not using kernel source
+mkdir -p $OUT/obj/KERNEL_OBJ/usr/include/
+
 brunch $DEVICE
 file = $(ls $OUT/cm-13.0-*.zip)
 if [ -f $file ]; then
