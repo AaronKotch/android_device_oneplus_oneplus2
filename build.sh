@@ -1,5 +1,5 @@
 #! /bin/bash
-if [ -f .repo/repo ]; then
+if [ -f .repo/manifests.git ]; then
 	echo "repo is already installed here"
 else
 	repo init -u https://github.com/CyanogenMod/android.git -b cm-13.0 -p linux
